@@ -1,4 +1,5 @@
+import { dedupe } from "./dedupe.js";
+
 export function handleInvoice(event, store) {
-  store.push(event.invoice);
-  return store;
+  return dedupe(store, event.invoice);
 }
