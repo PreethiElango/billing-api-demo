@@ -6,3 +6,8 @@ test("a monthly subscription renews a month later", () => {
   const sub = scheduleRenewal({ startedAt: new Date("2026-01-15T00:00:00Z") });
   assert.equal(sub.renewsAt.toISOString().slice(0, 10), "2026-02-15");
 });
+
+test("an annual subscription renews a year later", () => {
+  const sub = scheduleRenewal({ interval: "year", startedAt: new Date("2026-01-15T00:00:00Z") });
+  assert.equal(sub.renewsAt.toISOString().slice(0, 10), "2027-01-15");
+});
