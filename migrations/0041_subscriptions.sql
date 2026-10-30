@@ -1,0 +1,1 @@
+CREATE TABLE subscriptions (id BIGINT PRIMARY KEY, customer_id BIGINT NOT NULL, started_at TIMESTAMPTZ NOT NULL);
